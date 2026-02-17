@@ -3,7 +3,7 @@ Contributors: tessawatkinsllc, sevenspark
 Donate link: https://just1voice.com/donate/
 Tags: Contact Form 7, autofill, prepopulate, dynamic form, form field
 Tested up to: 6.9
-Stable tag: 5.0.4
+Stable tag: 5.0.5
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -396,10 +396,16 @@ Please report security bugs found in the source code of _Contact Form 7 - Dynami
 
 == Upgrade Notice ==
 
-= 5.0.4 =
-Addressed security vulnerability responsibly reported by NosleeP++ to Wordfence. See [the changelog](https://plugins.trac.wordpress.org/browser/contact-form-7-dynamic-text-extension/trunk/changelog.txt) for more details.
+= 5.0.5 =
+Fixed a type-o in nonce verification. See [the changelog](https://plugins.trac.wordpress.org/browser/contact-form-7-dynamic-text-extension/trunk/changelog.txt) for more details.
 
 == Changelog ==
+
+= 5.0.5 =
+
+**Release Date: 02/17/2026**
+
+* Fix: Fixed a type-o in nonce verification where it compared the value against 0 instead of 1, [see support thread](https://wordpress.org/support/topic/nonce-issue-in-cf7-dte/).
 
 = 5.0.4 =
 
