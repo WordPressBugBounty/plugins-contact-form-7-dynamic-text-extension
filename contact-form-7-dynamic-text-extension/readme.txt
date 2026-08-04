@@ -1,9 +1,9 @@
-=== Contact Form 7 - Dynamic Text Extension ===
+=== DTX - Dynamic Text Extension for Contact Form 7 ===
 Contributors: tessawatkinsllc, sevenspark
 Donate link: https://just1voice.com/donate/
 Tags: Contact Form 7, autofill, prepopulate, dynamic form, form field
 Tested up to: 7.0
-Stable tag: 5.0.6
+Stable tag: 5.0.7
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -11,7 +11,7 @@ Extends Contact Form 7 by adding dynamic form fields that accepts shortcodes to 
 
 == Description ==
 
-Contact Form 7 is an excellent WordPress plugin and one of the top choices of free WordPress plugins for contact forms. Contact Form 7 - Dynamic Text Extension (DTX) makes it even more awesome by adding dynamic content capabilities. While default values in Contact Form 7 are static, DTX lets you create pre-populated fields pulled from other locations. Some examples might include:
+Contact Form 7 is an excellent WordPress plugin and one of the top choices of free WordPress plugins for contact forms. _DTX - Dynamic Text Extension for Contact Form 7_ makes it even more awesome by adding dynamic content capabilities. While default values in Contact Form 7 are static, DTX lets you create pre-populated fields pulled from other locations. Some examples might include:
 
 * Auto-filling a URL or just getting the domain name or path
 * Auto-filling a post ID, title, or slug
@@ -392,7 +392,7 @@ Please check out the [FAQ on our website](https://aurisecreative.com/docs/contac
 
 = Where do I report security bugs found in this plugin? =
 
-Please report security bugs found in the source code of _Contact Form 7 - Dynamic Text Extension_ WordPress plugin through the [Wordfence Intelligence Vulnerability Submission Form](https://www.wordfence.com/threat-intel/vulnerabilities/submit) or the [Patchstack Vulnerability Disclosure Program](https://patchstack.com/database/vdp/56e65af9-b50c-4307-b670-7d69463bd829). Both platforms can assist you with verification, CVE assignment, and notify me without publicly disclosing details that could put websites at risk.
+Please report security bugs found in the source code of _DTX - Dynamic Text Extension for Contact Form 7_ WordPress plugin through the [Wordfence Intelligence Vulnerability Submission Form](https://www.wordfence.com/threat-intel/vulnerabilities/submit) or the [Patchstack Vulnerability Disclosure Program](https://patchstack.com/database/vdp/56e65af9-b50c-4307-b670-7d69463bd829). Both platforms can assist you with verification, CVE assignment, and notify me without publicly disclosing details that could put websites at risk.
 
 = Where can I contribute? =
 
@@ -400,10 +400,23 @@ Feel free to check out the [GitHub repository](https://github.com/sevenspark/con
 
 == Upgrade Notice ==
 
-= 5.0.6 =
-Special thanks to Shane Hollis (@webkiwinz) for these security fixes! See [the changelog](https://plugins.trac.wordpress.org/browser/contact-form-7-dynamic-text-extension/trunk/changelog.txt) for more details.
+= 5.0.7 =
+Plugin name change and other little updates. See [the changelog](https://plugins.trac.wordpress.org/browser/contact-form-7-dynamic-text-extension/trunk/changelog.txt) for more details.
 
 == Changelog ==
+
+= 5.0.7 =
+
+**Release Date: 08/03/2026**
+
+* Update: the name of this plugin was changed from _"Contact Form 7 - Dynamic Text Extension"_ to _"DTX - Dynamic Text Extension for Contact Form 7"_ to comply with the [plugin guideline #17 set by WordPress](https://developer.wordpress.org/plugins/wordpress-org/detailed-plugin-guidelines/#17-plugins-must-respect-trademarks-copyrights-and-project-names) and to respect the trademarks and copyrights of the plugin _Contact Form 7_ by Takayuki Miyoshi and Rock Lobster Inc.
+* Update: the menu item for the settings page was changed from _"Dynamic Text Extension"_ to simply _"DTX"_.
+* Security: Disallowed direct file access for files that had it missing.
+* Security: Added escaping to more dynamic strings.
+* Optimization: Added a setting callback to sanitize the array object
+* Internationalization: addressed incidences where the text domain was not set or incorrect.
+* Update: Added a "None found" message in the form scan when no results were found.
+* Update: Gave the scan button on the settings page a secondary button style.
 
 = 5.0.6 =
 
@@ -434,10 +447,6 @@ _Note from Tessa: the AJAX nonce validation that checks `!== 1` was intentional 
 = 5.0.3 =
 
 * Fix: Moved settings translations to load as needed instead of immediately hoping to address the `Function _load_textdomain_just_in_time was called incorrectly` notice added in WordPress core version 6.7, [see support thread](https://wordpress.org/support/topic/https://wordpress.org/support/topic/error-loading-textdomain-since-wp-6-7/).
-
-= 5.0.2 =
-
-* Security: Addressed security vulnerability responsibly reported by Rafie Muhammad to Patchstack.
 
 = Older Releases =
 

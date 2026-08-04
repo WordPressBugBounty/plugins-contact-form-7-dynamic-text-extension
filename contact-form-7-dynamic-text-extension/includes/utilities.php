@@ -279,9 +279,7 @@ function wpcf7dtx_get_dynamic($value, $tag = false, $sanitize = 'auto', $option_
     if (is_string($value) && !empty($value)) {
         // If a shortcode was passed as the value, attempt to evaluate itevaluate it and use the result
         $shortcode_tag = '[' . $value . ']';
-        //var_dump('Shortcode tag?', $shortcode_tag);
         $shortcode_output = do_shortcode($shortcode_tag); //Shortcode value
-        //var_dump('Shortcode value?', $shortcode_output);
         if ($shortcode_output != $shortcode_tag) {
             return apply_filters('wpcf7dtx_sanitize', $shortcode_output, $sanitize);
         }
@@ -658,7 +656,7 @@ function wpcf7dtx_checkbox_group_html($atts, $options, $label_ui = false, $rever
                 if (is_string($dynamic_option) && !empty($dynamic_option) && strpos($dynamic_option, '{') === 0 && strpos($dynamic_option, '}') === strlen($dynamic_option) - 1) {
                     // If it outputs JSON, try parsing it
                     try {
-                        $dynamic_option = json_decode($dynamic_option, true);
+                        $dynamic_option = json_decode($dynamic_option, true, 512, JSON_THROW_ON_ERROR);
                         if (is_array($dynamic_option) && count($dynamic_option)) {
                             $group_html[] = wpcf7dtx_checkbox_group_html(
                                 $my_atts,
@@ -668,10 +666,10 @@ function wpcf7dtx_checkbox_group_html($atts, $options, $label_ui = false, $rever
                                 $exclusive
                             );
                         }
-                    } catch (Exception $e) {
+                    } catch (JsonException $e) {
                         // Fail quietly
                         if (WP_DEBUG && WP_DEBUG_LOG) {
-                            error_log('[Contact Form 7 - Dynamic Text Extension] Error parsing JSON value');
+                            error_log('[DTX - Dynamic Text Extension for Contact Form 7] Error parsing JSON value');
                             error_log($e->getMessage());
                         }
                     }
@@ -768,7 +766,7 @@ function wpcf7dtx_options_html($options, $selected_value = '')
             '<option value="%1$s"%3$s>%2$s</option>',
             esc_attr(apply_filters('wpcf7dtx_escape', $dynamic_value)),
             esc_html(apply_filters('wpcf7dtx_escape', $dynamic_label)),
-            $selected_value == $dynamic_label ? ' selected' : ''
+            $selected_value == $dynamic_value ? ' selected' : ''
         );
     }
     return $html;
